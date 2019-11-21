@@ -20,12 +20,14 @@ This XML file does not appear to have any style information associated with it. 
 <thucydides.version>1.8.4</thucydides.version>
 <jelastic.context>gameoflife</jelastic.context>
 <jelastic.environment>wakaleo</jelastic.environment>
+
+</properties>
+<properties>
 <property>
 <name>listener</name>
 <value>org.sonar.java.jacoco.JUnitListener</value>
 </property>
 </properties>
-<properties>...</properties>
 
 <scm>
 <connection>
