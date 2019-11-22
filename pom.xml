@@ -99,7 +99,7 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
+                <artifactId>sonar-maven-plugin:3.0.2</artifactId> 
                 <version>3.0.2</version>
             </plugin>
             <plugin>
