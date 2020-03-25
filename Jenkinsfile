@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh './gradlew build --no-daemon'
+                sh 'mvn clean compile'
                 archiveArtifacts artifacts: 'dist/game_of_life.zip'
             }
         }
@@ -50,8 +50,8 @@ pipeline {
             steps {
                 milestone(1)
                 kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube.yml',
+                    kubeconfigId: 'kubeconfigJ',
+                    configs: 'application.yml',
                     enableConfigSubstitution: true
                 )
             }
