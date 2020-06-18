@@ -1,3 +1,2 @@
 #!/bin/sh
-sudo su
-kubectl create -f app.yml
+sudo su && kubectl create -f app.yml
