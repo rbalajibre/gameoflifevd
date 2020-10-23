@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vanderlande
+  labels:
+    name: vanderlande
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vanderlande
+  namespace: vanderlande
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vanderlande
+  template:
+    metadata:
+      labels:
+        app: vanderlande
+    spec:
+      containers:
+      - name: app-container
+        image: samplepushdemo/gameoflife:v1
+        ports:
+          - containerPort: 8080 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vanderlande
+  namespace: vanderlande
+spec:
+  type: LoadBalancer
+  selector:
+    app: vanderlande
+  ports:
+  - port: 8080
